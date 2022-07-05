@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Rubik', sans-serif;
+
+    --work: hsl(15, 100%, 70%);
+    --play: hsl(195, 74%, 62%);
+    --study: hsl(348, 100%, 68%);
+    --exercise: hsl(145, 58%, 55%);
+    --social: hsl(264, 64%, 52%);
+    --self: hsl(43, 84%, 65%);
+}
+
+body {
+    background-color: hsl(226, 43%, 10%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    overflow-y: hidden;
+    user-select: none;
+}
+
+main {
+    padding: 4rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 20rem);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+        "aside work play study"
+        "aside exercise social self";
+
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 80vh;
+    margin: auto;
+}
+
+aside, section {
+    background-color: cyan;
+    height: 100%;
+}
+
+/* Profile Aside */
+aside {
+    grid-area: aside;
+    background-color: hsl(235, 46%, 20%);
+    border-radius: 25px;
+}
+
+aside div.profile-container {
+    background-color: hsl(246, 80%, 60%);
+    padding: 2rem;
+    border-radius: 25px;
+    height: 70%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+aside img {
+    width: 6rem;
+    border: 3px solid white;
+    border-radius: 50%;
+    justify-self: flex-start;
+}
+
+aside h1 {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+aside menu {
+    height: 30%;
+    list-style: none;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+aside menu li button {
+    color: hsl(235, 45%, 61%);
+    font-size: 1.4rem;
+    background: none;
+    border: none;
+    font-family: inherit;
+}
+
+aside menu li button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+/* Secciones */
+
+section {
+    border-radius: 25px 25px 50px 50px;
+    position: relative;
+}
+
+section img {
+    width: 6rem;
+    position: absolute;
+    right: 15px;
+    top: -0.5rem;
+}
+
+section div.info {
+    background-color: hsl(235, 46%, 20%);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80%;
+    z-index: 1;
+    border-radius: 25px;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section div.info h2 {
+    font-weight: 400;
+}
+
+section div.info h3 {
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+section div.info p {
+    color: hsl(235, 45%, 61%);
+}
+
+section div.info button {
+    position: absolute;
+    right: 2rem;
+    top: 0.8rem;
+    background: none;
+    border: none;
+    color: hsl(235, 45%, 61%);
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: -4px;
+}
+
+section#work {
+    grid-area: work;
+    background-color: var(--work);
+}
+
+section#play {
+    grid-area: play;
+    background-color: var(--play);
+}
+
+section#study {
+    grid-area: study;
+    background-color: var(--study);
+}
+
+section#exercise {
+    grid-area: exercise;
+    background-color: var(--exercise);
+}
+
+section#social {
+    grid-area: social;
+    background-color: var(--social);
+}
+
+section#self {
+    grid-area: self;
+    background-color: var(--self);
+}
